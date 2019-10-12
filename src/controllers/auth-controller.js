@@ -7,11 +7,13 @@ class AuthController {
 
 	constructor() {
 		this.router = new Router();
-		this.router.post('/', this.auth);
+		this.router.get('/', this.auth);
 	}
 
 	auth(req, res) {
-
+		res.json({
+			message: 'hello world'
+		});
 	}
 
 }
