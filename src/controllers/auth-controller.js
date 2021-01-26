@@ -1,21 +1,12 @@
 const Router = require('express').Router;
-const jwt = require('jsonwebtoken');
 
-const JWT_SALT = process.env.JWT_SALT;
+const routes = new Router();
+routes.get('/', auth);
 
-class AuthController {
-
-	constructor() {
-		this.router = new Router();
-		this.router.get('/', this.auth);
-	}
-
-	auth(req, res) {
-		res.json({
-			message: 'hello world'
-		});
-	}
-
+function auth(req, res) {
+	res.json({
+		message: 'hello world'
+	});
 }
 
-module.exports = new AuthController();
+exports.router = routes;
